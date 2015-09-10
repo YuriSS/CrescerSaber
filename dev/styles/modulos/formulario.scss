@@ -1,5 +1,6 @@
 
 .form-group {
+  position: relative;
   width: 100%;
   margin-top: $small;
   @include clear;
@@ -9,9 +10,14 @@
     float: right;
     width: 83%;
     padding: $small / 2;
+    padding-left: 6%;
     border: $divider-color solid 1px;
     border-radius: $small / 2;
     outline: none;
+  }
+  .campo-mensagem {
+    padding-left: $small / 2;
+    min-height: 155px;
   }
 
   label {
@@ -22,15 +28,38 @@
   }
 }
 
+%icone-formulario {
+  font-family: 'fontello';
+  position: absolute;
+  z-index: 999;
+  top: 1px;
+  left: 17%;
+  width: 5%;
+  height: 29px;
+  padding: 0.6em;
+  background: $divider-color;
+  color: $text-icons;
+  border-top-left-radius: $small / 2;
+  border-bottom-left-radius: $small / 2;
+  text-align: center;
+}
 
-.mensagem {
+
+.form-group.name {
   &::before {
-    content: "\e801";
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: $small / 2;
-    background: $divider-color;
-    color: $text-icons;
+    @extend %icone-formulario;
+    content: '\e800';
+  }
+}
+.form-group.email {
+  &::before {
+    @extend %icone-formulario;
+    content: '\e801';
+  }
+}
+.form-group.city {
+  &::before {
+    @extend %icone-formulario;
+    content: '\e803';
   }
 }

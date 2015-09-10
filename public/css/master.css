@@ -81,6 +81,7 @@ h6 {
   color: #fff; }
 
 .form-group {
+  position: relative;
   width: 100%;
   margin-top: 1em;
   clear: both; }
@@ -93,23 +94,42 @@ h6 {
     float: right;
     width: 83%;
     padding: 0.5em;
+    padding-left: 6%;
     border: #b6b6b6 solid 1px;
     border-radius: 0.5em;
     outline: none; }
+  .form-group .campo-mensagem {
+    padding-left: 0.5em;
+    min-height: 155px; }
   .form-group label {
     display: inline-block;
     vertical-align: middle;
     width: 15%;
     text-align: right; }
 
-.mensagem::before {
-  content: "\e801";
+.form-group.name::before, .form-group.email::before, .form-group.city::before {
+  font-family: 'fontello';
   position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.5em;
+  z-index: 999;
+  top: 1px;
+  left: 17%;
+  width: 5%;
+  height: 29px;
+  padding: 0.6em;
   background: #b6b6b6;
-  color: #fff; }
+  color: #fff;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  text-align: center; }
+
+.form-group.name::before {
+  content: '\e800'; }
+
+.form-group.email::before {
+  content: '\e801'; }
+
+.form-group.city::before {
+  content: '\e803'; }
 
 body {
   font: 400 13px "Open Sans", sans-serif;
