@@ -9,6 +9,11 @@ body {
 }
 
 
+p {
+  margin-top: $small;
+}
+
+
 .container {
     @include base-espaco-medium;
     @include clear;

@@ -1,0 +1,14 @@
+
+%img {
+  width: 30%;
+  margin: $small;
+}
+
+.img-right {
+  @extend %img;
+  float: right;
+}
+.img-left {
+  @extend %img;
+  float: left;
+}
