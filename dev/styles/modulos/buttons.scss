@@ -1,0 +1,20 @@
+
+%btn {
+  display: inline-block;
+  background: $primary-color;
+  color: $secondary-text;
+  padding: ($small / 2) $medium;
+  border-radius: $small / 2;
+  cursor: pointer;
+}
+
+
+.btn-submit {
+  @extend %btn;
+  background: $accent-color;
+  color: $text-icons;
+  font-weight: $bold;
+  border: none;
+  float: right;
+  margin-top: $small;
+}

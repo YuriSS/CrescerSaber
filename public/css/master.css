@@ -131,6 +131,22 @@ h6 {
 .form-group.city::before {
   content: '\e803'; }
 
+.btn-submit {
+  display: inline-block;
+  background: #03a9f4;
+  color: #727272;
+  padding: 0.5em 1.4em;
+  border-radius: 0.5em;
+  cursor: pointer; }
+
+.btn-submit {
+  background: #e040fb;
+  color: #fff;
+  font-weight: 800;
+  border: none;
+  float: right;
+  margin-top: 1em; }
+
 body {
   font: 400 13px "Open Sans", sans-serif;
   color: #212121; }
