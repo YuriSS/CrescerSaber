@@ -1,0 +1,36 @@
+
+.form-group {
+  width: 100%;
+  margin-top: $small;
+  @include clear;
+
+  .campo {
+    position: relative;
+    float: right;
+    width: 83%;
+    padding: $small / 2;
+    border: $divider-color solid 1px;
+    border-radius: $small / 2;
+    outline: none;
+  }
+
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15%;
+    text-align: right;
+  }
+}
+
+
+.mensagem {
+  &::before {
+    content: "\e801";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: $small / 2;
+    background: $divider-color;
+    color: $text-icons;
+  }
+}

@@ -1,0 +1,223 @@
+
+body {
+  font: $base-font-weight $base-font-size $base-font-family;
+  color: $base-font-color;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+
+.container {
+    @include base-espaco-medium;
+    @include clear;
+
+    width: 75%;
+    margin: auto;
+}
+
+
+
+#menu-topo {
+  position: fixed;
+  z-index: 9999999;
+  display: block;
+  width: 100%;
+
+  background: $dark-primary-color;
+
+  .menu-lista {
+    float: left;
+    li {
+      display: inline-block;
+      @include base-espaco-small;
+
+      a {
+        @extend %negative-link;
+      }
+    }
+  }
+
+  .icones {
+    font-family: 'fontello';
+    float: right;
+    @include base-espaco-small;
+
+    &--twitter::before {content: '\e805'; display: inline-block; font-size: $medium;}
+    &--facebook::before {content: '\e804'; display: inline-block; font-size: $medium; margin: 0 $small;}
+    &--email::before {content: '\e802'; display: inline-block; font-size: $medium;}
+
+    a {
+      @extend %negative-link;
+    }
+  }
+}
+
+
+
+#header {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-image: url(../images/bg-inicial.jpg);
+  background-size: 100% 100%;
+  padding: $big;
+
+  div {
+    $width: 760px;
+    position: absolute;
+    z-index: 999;
+    width: $width;
+    top: 20%;
+    left: 50%;
+    margin-left: ($width / 2) * -1!important;
+    background: $primary-color;
+    @include base-espaco-medium;
+    opacity: .8;
+    text-align: center;
+
+    h1 {
+      color: $text-icons;
+      font-size: 2em;
+    }
+
+    .header--autor {
+      display: block;
+      color: $text-icons;
+      text-align: right;
+      font-size: 1.2em;
+    }
+  }
+}
+
+#header.interna {
+  height: 50%;
+}
+
+
+#conteudo {
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #FFF;
+
+  h1 {
+    text-align: center;
+  }
+
+  .box-blocks {
+    margin: $small 0;
+
+    ul {
+      margin: $medium 0;
+      @include clear;
+
+      li {
+        position: relative;
+        float: left;
+        width: (100% / 3);
+        height: 200px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        &:hover {
+          .box-blocks--desc {
+            bottom: 0;
+          }
+          .box-blocks--titulo {
+            top: 0;
+          }
+          .box-blocks--conteudo {
+            opacity: .8;
+          }
+        }
+      }
+    }
+
+    &--desc, &--titulo, &--conteudo {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      transition: all .2s ease-in-out;
+    }
+
+    &--desc {
+      bottom: -100%;
+      transition-delay: .2s;
+      padding: $small;
+      font-size: $medium;
+    }
+
+    &--titulo {
+      top: -100%;
+      text-align: center;
+      transition-delay: .2s;
+      color: $text-icons;
+      padding: $small;
+    }
+
+    &--conteudo {
+      top: 0;
+      height: 100%;
+      padding: $small;
+      background: $primary-color;
+      color: $text-icons;
+      opacity: 0;
+    }
+  }
+
+  .box-figure {
+    @include clear;
+    margin: 3.5em 0;
+
+    h1 {
+      font-size: $medium + 0.6;
+      text-align: left;
+    }
+    h2 {
+      font-size: $medium + 0.2;
+      text-align: left;
+      color: $secondary-text;
+    }
+
+    &--titulo {
+      font-weight: $bold;
+      margin: $small 0;
+    }
+
+    &--image {
+      width: 45%;
+      float: left;
+      margin-right: 2%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+#conteudo.interna {
+  top: 55%;
+}
+
+
+#rodape {
+  background: #CCC;
+  color: $secondary-text;
+  text-align: center;
+  padding: $medium;
+
+  span {
+    font-weight: $bold;
+  }
+}

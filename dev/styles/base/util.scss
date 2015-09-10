@@ -1,0 +1,23 @@
+
+@mixin clear {
+  clear: both;
+  &::after, &::before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+
+@mixin base-espaco-small {
+  margin: 0 $small;
+  padding: $small;
+}
+@mixin base-espaco-medium {
+  margin: 0 $medium;
+  padding: $medium;
+}
+@mixin base-espaco-big {
+  margin: 0 $big;
+  padding: $big;
+}

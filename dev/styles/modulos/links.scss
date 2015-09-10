@@ -1,0 +1,25 @@
+
+%link
+{
+  font-weight: $bold;
+  text-decoration: none;
+}
+
+
+%primary-link
+{
+  @extend %link;
+  color: $primary-text;
+}
+
+%secondary-link
+{
+  @extend %link;
+  color: $secondary-text;
+}
+
+%negative-link
+{
+  @extend %link;
+  color: $text-icons;
+}
